@@ -1,0 +1,15 @@
+.home__container {
+  color: black;
+  width: 100%;
+  min-height: 350px;
+}
+
+.home {
+  min-height: calc(100vh - 75px);
+  background: url("../../assets/photos/home/bg-image.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

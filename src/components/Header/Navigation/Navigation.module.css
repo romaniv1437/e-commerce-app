@@ -1,0 +1,26 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 370px;
+  width: 100%;
+  padding: 5px;
+}
+.navigation a {
+  font-weight: 500;
+  color: black;
+}
+.navigation a:hover {
+  color: #2f2f2f;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+  }
+  .navigation a {
+    color: #fff;
+    font-size: 25px;
+  }
+}
+
+/*# sourceMappingURL=Navigation.module.css.map */

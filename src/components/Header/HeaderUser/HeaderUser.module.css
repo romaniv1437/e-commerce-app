@@ -1,0 +1,19 @@
+.header_user {
+  padding: 5px;
+  max-width: 85px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header_user img {
+  width: 25.5px;
+  height: 25.5px;
+}
+
+@media (max-width: 768px) {
+  .header_user {
+    order: 2;
+  }
+}
+
+/*# sourceMappingURL=HeaderUser.module.css.map */
