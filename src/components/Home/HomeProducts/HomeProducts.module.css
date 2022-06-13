@@ -3,6 +3,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 60px;
+}
+.home_products .titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=HomeProducts.module.css.map */
