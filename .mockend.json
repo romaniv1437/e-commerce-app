@@ -1,0 +1,11 @@
+{
+  "Products": {
+      "id": {"int": {} },
+      "title": { "string": {} },
+      "imageURL": {
+        "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+      },
+      "description": {"string": {} },
+      "price": {"int":  {} }
+  }
+}
