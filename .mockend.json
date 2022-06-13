@@ -2,7 +2,7 @@
   "Products": {
       "id": {"int": {
         "min": 1,
-        "max": 999
+        "max": 900
       } },
       "title": { "string": {} },
       "imageURL": {
@@ -13,4 +13,5 @@
         "min": 10,
         "max": 100
       } }
+  }
 }
