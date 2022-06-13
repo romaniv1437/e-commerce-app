@@ -1,11 +1,16 @@
 {
   "Products": {
-      "id": {"int": {} },
+      "id": {"int": {
+        "min": 1,
+        "max": 999
+      } },
       "title": { "string": {} },
       "imageURL": {
         "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
       },
       "description": {"string": {} },
-      "price": {"int":  {} }
-  }
+      "price": {"int": {
+        "min": 10,
+        "max": 100
+      } }
 }
