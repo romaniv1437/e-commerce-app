@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './CustomButton.module.css'
 
-const CustomButton = (props) => {
+const CustomButton = (props:any) => {
     return (
         <button {...props} className={s.default_button}>{props.children}</button>
     );

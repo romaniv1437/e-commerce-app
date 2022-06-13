@@ -4,6 +4,13 @@
     background-color: #56B280;
     border-radius: 3px;
     color: #fff;
+    transition: .3s linear;
+    cursor: pointer;
     padding: 5px 10px;
     font-size: 20.65px;
+}
+
+.default_button:hover {
+    transition: .3s linear;
+    background-color: #65be8d;
 }

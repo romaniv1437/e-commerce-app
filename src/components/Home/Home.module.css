@@ -1,15 +1,16 @@
-.home__container {
-  color: black;
-  width: 100%;
-  min-height: 350px;
-}
-
-.home {
+.home_main_page .home {
   min-height: calc(100vh - 75px);
   background: url("../../assets/photos/home/bg-image.jpg") no-repeat center;
   background-size: cover;
   display: flex;
   align-items: center;
+}
+.home_main_page .home .home__container {
+  color: black;
+  width: 100%;
+}
+.home_main_page .products_page__container {
+  width: 100%;
 }
 
 /*# sourceMappingURL=Home.module.css.map */

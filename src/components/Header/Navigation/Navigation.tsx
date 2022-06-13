@@ -3,7 +3,7 @@ import s from './Navigation.module.css'
 import DropdownMenu from "./DropdownMenu";
 import {NavLink} from "react-router-dom";
 
-const Navigation = (props) => {
+const Navigation = (props:any) => {
     return (
         <div className={s.navigation}>
             <DropdownMenu closeMenu={props.closeMenu} discovery_items={props.discovery_items}/>

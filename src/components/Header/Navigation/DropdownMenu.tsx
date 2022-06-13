@@ -4,9 +4,9 @@ import 'antd/dist/antd.min.css';
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const DropdownMenu = (props) => {
+const DropdownMenu = (props:any) => {
 
-    const discovery_items = props.discovery_items.map(item => { return {
+    const discovery_items = props.discovery_items.map((item:any) => { return {
         label: (
             <NavLink onClick={props.closeMenu} to={`/discovery/${item.name.toLowerCase()}`}>
                 <p>{item.name}</p>

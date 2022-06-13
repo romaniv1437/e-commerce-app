@@ -2,7 +2,7 @@ import React from 'react';
 import s from './HeaderUser.module.css'
 import {NavLink} from "react-router-dom";
 
-const HeaderUser = (props) => {
+const HeaderUser = (props:any) => {
     return (
         <div className={s.header_user}>
             <NavLink to='/profile'><img src={props.profileImage} alt="profile"/></NavLink>

@@ -3,7 +3,7 @@ import './MenuBurger.css'
 import { slide as Menu } from 'react-burger-menu'
 import Navigation from "../Navigation/Navigation";
 
-const MenuBurger = (props) => {
+const MenuBurger = (props:any) => {
 
     const [isOpen, setOpen] = useState(false)
     const handleIsOpen = () => setOpen(!isOpen)

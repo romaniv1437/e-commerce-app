@@ -10,7 +10,7 @@ import {discovery_items} from "../../data/HeaderData";
 import MenuBurger from "./MenuBurger/MenuBurger";
 import useWindowDimensions from "../../assets/hooks/useWindowDimensions";
 
-const Header = (props) => {
+const Header = () => {
     const { width } = useWindowDimensions();
     return (
         <header className={s.header}>

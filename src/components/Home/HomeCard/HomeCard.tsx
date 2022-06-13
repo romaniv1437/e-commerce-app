@@ -2,8 +2,9 @@ import React from 'react';
 import s from './HomeCard.module.css'
 import CustomButton from "../../assets/Button/CustomButton";
 import Title from "../../assets/Title/Title";
+import {NavLink} from "react-router-dom";
 
-const HomeCard = (props) => {
+const HomeCard = (props:any) => {
     return (
         <div className={s.home_card}>
             <div className={s.card__titles}>
@@ -11,7 +12,7 @@ const HomeCard = (props) => {
                 <Title>{props.HomeCardData.title}</Title>
                 <p>{props.HomeCardData.subTitle}</p>
             </div>
-            <CustomButton>{props.HomeCardData.buttonText}</CustomButton>
+            <NavLink to='/discovery'><CustomButton>{props.HomeCardData.buttonText}</CustomButton></NavLink>
         </div>
     );
 };
