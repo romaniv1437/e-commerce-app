@@ -4,11 +4,11 @@
         "min": 1,
         "max": 900
       } },
-      "title": { "string": {} },
+      "title": { "regexp": "[A-Z][a-z]{5,10}" },
       "imageURL": {
-        "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+        "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
       },
-      "description": {"string": {} },
+      "description": { "regexp": "[A-Z][a-z]{5,30}" },
       "price": {"int": {
         "min": 10,
         "max": 100
