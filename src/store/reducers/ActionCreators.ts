@@ -13,3 +13,15 @@ export const getProductsForMainPage = createAsyncThunk(
         }
     }
 )
+
+export const getPopularProductsForMainPage = createAsyncThunk(
+    'popularProduct/getAll',
+    async (data: any, thunkAPI) => {
+        try {
+            const response = await productAPI.getPopularProductsForMainPage(data.limit, data.page)
+            return response.data
+        } catch (e) {
+            return thunkAPI.rejectWithValue('Products не загрузились')
+        }
+    }
+)

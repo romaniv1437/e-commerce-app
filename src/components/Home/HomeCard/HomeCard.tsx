@@ -4,15 +4,19 @@ import CustomButton from "../../assets/Button/CustomButton";
 import Title from "../../assets/Title/Title";
 import {NavLink} from "react-router-dom";
 
-const HomeCard = (props:any) => {
+type PrivateProps = {
+    HomeCardData: {icon: string, title: string, subTitle: string, buttonText: string }
+}
+
+const HomeCard = ({HomeCardData}:PrivateProps) => {
     return (
         <div className={s.home_card}>
             <div className={s.card__titles}>
-                <Title>{props.HomeCardData.icon}</Title>
-                <Title>{props.HomeCardData.title}</Title>
-                <p>{props.HomeCardData.subTitle}</p>
+                <Title>{HomeCardData.icon}</Title>
+                <Title>{HomeCardData.title}</Title>
+                <p>{HomeCardData.subTitle}</p>
             </div>
-            <NavLink to='/discovery'><CustomButton>{props.HomeCardData.buttonText}</CustomButton></NavLink>
+            <NavLink to='/discovery'><CustomButton>{HomeCardData.buttonText}</CustomButton></NavLink>
         </div>
     );
 };

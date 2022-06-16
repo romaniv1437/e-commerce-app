@@ -12,6 +12,31 @@
   }
   .products_page__container {
     width: 100%;
+    margin-bottom: 50px;
+  }
+  .products_info {
+    background-color: #F7F8FA;
+    width: 100%;
+    .products_info__container {
+      display: flex;
+      align-items: center;
+      width: 100% ;
+    }
+  }
+  .testimonials {
+    background-color: rgba(86, 178, 128, 0.1);
+    .testimonials__container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  .popular_products {
+    .popular_products__container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
   }
 }
 

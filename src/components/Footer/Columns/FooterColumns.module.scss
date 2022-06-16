@@ -1,0 +1,18 @@
+.column_flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .column {
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 16px;
+    }
+    .title {
+      color: #56B280;
+    }
+    .subTitle {
+      color: #fff
+    }
+  }
+}

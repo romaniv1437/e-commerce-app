@@ -11,6 +11,29 @@
 }
 .home_main_page .products_page__container {
   width: 100%;
+  margin-bottom: 50px;
+}
+.home_main_page .products_info {
+  background-color: #F7F8FA;
+  width: 100%;
+}
+.home_main_page .products_info .products_info__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.home_main_page .testimonials {
+  background-color: rgba(86, 178, 128, 0.1);
+}
+.home_main_page .testimonials .testimonials__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.home_main_page .popular_products .popular_products__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 /*# sourceMappingURL=Home.module.css.map */

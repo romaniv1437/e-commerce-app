@@ -2,11 +2,15 @@ import React from 'react';
 import s from "../Header.module.css";
 import {NavLink} from "react-router-dom";
 
-const Logo = (props:any) => {
+type PrivateProps = {
+    logoImage: string
+}
+
+const Logo = ({logoImage}:PrivateProps) => {
     return (
         <div className={s.logo}>
-            <NavLink to='/home'>
-                <img src={props.logoImage} alt=""/>
+            <NavLink to='/'>
+                <img src={logoImage} alt=""/>
             </NavLink>
         </div>
     );

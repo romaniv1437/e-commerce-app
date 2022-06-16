@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  align-items: flex-end;
+  background-color: #272727;
+  min-height: 383px;
+}
+.footer .footer__container {
+  flex-wrap: wrap;
+  border-top: 2px solid #fff;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 323px;
+}
+.footer .footer__container .left .description {
+  max-width: 250px;
+  font-size: 16px;
+  color: #fff;
+}
+.footer .footer__container .right {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 490px;
+  min-height: 150px;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

@@ -1,10 +1,11 @@
-import {IProduct} from "../../models/IProduct";
+import {IPopularProduct, IProduct} from "../../models/IProduct";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getProductsForMainPage} from "./ActionCreators";
+import {getPopularProductsForMainPage, getProductsForMainPage} from "./ActionCreators";
 
 
 interface ProductState {
     products: IProduct[],
+    popularProducts: IPopularProduct[]
     isLoading: boolean,
     error: string,
     currentPage: number,
@@ -13,6 +14,7 @@ interface ProductState {
 
 const initialState: ProductState = {
     products: [],
+    popularProducts: [],
     isLoading: false,
     error: '',
     currentPage: 1,
@@ -40,6 +42,18 @@ export const productSlice = createSlice({
             state.isLoading = true
         },
         [getProductsForMainPage.rejected.type]: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload
+        },
+        [getPopularProductsForMainPage.fulfilled.type]: (state, action: PayloadAction<IPopularProduct[]>) => {
+            state.isLoading = false;
+            state.error = '';
+            state.popularProducts = action.payload
+        },
+        [getPopularProductsForMainPage.pending.type]: (state) => {
+            state.isLoading = true
+        },
+        [getPopularProductsForMainPage.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload
         }

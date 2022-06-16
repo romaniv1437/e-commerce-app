@@ -1,0 +1,20 @@
+.column_flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.column_flex .column {
+  display: flex;
+  flex-direction: column;
+}
+.column_flex .column p {
+  font-size: 16px;
+}
+.column_flex .column .title {
+  color: #56B280;
+}
+.column_flex .column .subTitle {
+  color: #fff;
+}
+
+/*# sourceMappingURL=FooterColumns.module.css.map */
