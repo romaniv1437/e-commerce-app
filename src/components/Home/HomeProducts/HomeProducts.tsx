@@ -12,12 +12,8 @@ type PrivateProps = {
 
 const HomeProducts = ({HomeProductsData}:PrivateProps) => {
 
-    const dispatch = useAppDispatch();
-    const {products, isLoading, error, limit, currentPage} = useAppSelector(state => state.productReducer)
-    useEffect(() => {
-        dispatch(getProductsForMainPage({limit, currentPage}))
-    }, [dispatch, limit, currentPage])
 
+    const {products, isLoading, error} = useAppSelector(state => state.productReducer)
     return (
         <div className={s.home_products}>
             <div className={s.titles}>

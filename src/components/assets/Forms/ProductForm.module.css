@@ -1,0 +1,107 @@
+.form button {
+  margin-top: 10px;
+}
+.form .inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form .inputs .quantity {
+  align-self: flex-end;
+  margin-right: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 75px;
+}
+.form .inputs .quantity div {
+  gap: 10px 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.form .inputs .quantity input {
+  text-align: center;
+  border: 1px solid #56B280;
+  max-width: 84px;
+}
+.form .inputs .choice > div {
+  padding-left: 10px;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.form .inputs .choice > div input {
+  margin-right: 10px;
+}
+.form .inputs .choice .choice_subscribe {
+  margin-top: 13px;
+  min-height: 116px;
+  gap: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #DBDBDB;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.form .inputs .choice .choice_subscribe .subscribe_inputs {
+  display: flex;
+  align-items: center;
+}
+.form .inputs .choice .choice_subscribe .subscribe_inputs select {
+  font-weight: 500;
+  margin-left: 5px;
+  border: 1px solid #E7E7E7;
+  margin-top: 10px;
+  max-height: 21px;
+  max-width: 75px;
+}
+.form .inputs .choice .choice_subscribe .subscribe_inputs > div {
+  padding-top: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.form .inputs .choice .choice_subscribe .subscribe_inputs > div input {
+  margin-right: 10px;
+}
+@media (min-width: 769px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+  }
+  .form button {
+    max-width: 350px;
+    min-height: 42px;
+  }
+  .form .inputs {
+    padding-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .form .inputs .quantity {
+    align-self: flex-start;
+  }
+  .form .inputs .choice {
+    position: absolute;
+    right: 0;
+    top: -40px;
+    max-width: 350px;
+    min-height: 158px;
+  }
+  .form .inputs .choice .details p {
+    color: #656565;
+    font-size: 16px;
+  }
+  .form .inputs .choice .details p span a {
+    color: #56B280;
+  }
+}
+
+/*# sourceMappingURL=ProductForm.module.css.map */

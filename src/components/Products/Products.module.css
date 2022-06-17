@@ -1,0 +1,95 @@
+.product {
+  padding-top: 60px;
+  min-height: 621px;
+}
+@media (max-width: 768px) {
+  .product {
+    padding-top: 30px;
+  }
+  .product .product__container {
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .product .product__container .left {
+    margin-top: 40px;
+  }
+  .product .product__container .left .left_titles {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+  }
+  .product .product__container .right {
+    padding-bottom: 150px;
+  }
+  .product .product__container .right .right_title .title {
+    position: absolute;
+    top: 0;
+  }
+  .product .product__container .right .right_title .price {
+    position: absolute;
+    top: 450px;
+  }
+  .product .product__container .right .right_description {
+    margin-top: 20px;
+  }
+}
+.product .product__container {
+  display: flex;
+}
+@media (min-width: 770px) {
+  .product .product__container {
+    justify-content: space-between;
+  }
+}
+.product .product__container .left {
+  padding-right: 10px;
+}
+.product .product__container .left img {
+  max-width: 528px;
+  width: 100%;
+  min-height: 396px;
+}
+.product .product__container .left .left_titles {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 540px;
+}
+.product .product__container .left .left_titles .title {
+  font-size: 22px;
+  text-align: center;
+  max-width: 500px;
+}
+.product .product__container .left .left_titles .subTitle {
+  font-weight: 500;
+  font-size: 20px;
+  color: #56B280;
+}
+.product .product__container .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+}
+.product .product__container .right .right_title {
+  display: flex;
+  flex-direction: column;
+}
+.product .product__container .right .right_title .price {
+  color: #56B280;
+}
+.product .product__container .right .right_description {
+  padding: 10px;
+  margin-top: 40px;
+  max-width: 540px;
+  width: 100%;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+  min-height: 131px;
+}
+
+/*# sourceMappingURL=Products.module.css.map */
