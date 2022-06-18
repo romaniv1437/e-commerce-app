@@ -1,5 +1,5 @@
 .form {
-  button {
+  button, a {
     margin-top: 10px;
   }
   .inputs {
@@ -82,8 +82,9 @@
     align-items: flex-end;
     width: 100%;
     position: relative;
-    button {
+    button, a {
       max-width: 350px;
+      width: 100%;
       min-height: 42px;
     }
     .inputs {

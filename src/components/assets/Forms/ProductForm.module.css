@@ -1,4 +1,4 @@
-.form button {
+.form button, .form a {
   margin-top: 10px;
 }
 .form .inputs {
@@ -75,8 +75,9 @@
     width: 100%;
     position: relative;
   }
-  .form button {
+  .form button, .form a {
     max-width: 350px;
+    width: 100%;
     min-height: 42px;
   }
   .form .inputs {

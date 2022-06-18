@@ -3,19 +3,24 @@ import {Form, Formik} from 'formik';
 import * as Yup from 'yup';
 import CustomButton from "../Button/CustomButton";
 import cartImage from "../../../assets/photos/decor/Vector.svg";
+import greenCartImage from "../../../assets/photos/decor/green_cart.svg";
 import s from './ProductForm.module.css'
 import FormInput from "./FormAssets/FormInput";
 import {NavLink} from "react-router-dom";
 import FormSelect from "./FormAssets/FormSelect/FormSelect";
+import CustomLink from "../CustomLink/CustomLink";
 
 type PrivateProps = {
     buttonText: string,
     inputName: string,
     choiceOneTime: string,
-    choiceSubscribe: { title: string, subTitle: string }
+    choiceSubscribe: { title: string, subTitle: string },
+    addProducts: (id: number, productId:number, productTitle:string, productImage:string, price: number, count:number) => void,
+    cartProducts: Array<{ id: number; productId: number; count: number; productTitle: string; productImage: string; price: number; }>,
+    currentProduct: {id:number, title:string, imageURL:string, description:string, price:number},
 }
 
-const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe}: PrivateProps) => {
+const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe, addProducts, currentProduct, cartProducts}: PrivateProps) => {
     return (
         <Formik
             initialValues={{Quantity: 1, choiceOneTime: false, choiceSubscribe: false}}
@@ -24,7 +29,14 @@ const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe}: Pr
                     .min(1, 'Min 1')
             })}
             onSubmit={(values) => {
-                console.log(values)
+                addProducts(
+                    Date.now(),
+                    currentProduct.id,
+                    currentProduct.title,
+                    currentProduct.imageURL,
+                    currentProduct.price,
+                    values.Quantity
+                )
             }}
         >
             <Form className={s.form}>
@@ -49,8 +61,13 @@ const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe}: Pr
                         </div>
                     </div>
                 </div>
-
-                <CustomButton type="submit"><img src={cartImage} alt="cart"/> {buttonText}</CustomButton>
+                {cartProducts.some(p => p.productId === currentProduct.id) ?
+                    <CustomLink to='/cart'>
+                        <img src={greenCartImage} alt="cart"/> + Already in cart
+                    </CustomLink> :
+                    <CustomButton type="submit">
+                        <img src={cartImage} alt="cart"/> {buttonText}
+                    </CustomButton>}
             </Form>
         </Formik>
     );

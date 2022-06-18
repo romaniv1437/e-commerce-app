@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './FormInput.module.css'
-import {ErrorMessage, Field, useField} from "formik";
+import {ErrorMessage, Field} from "formik";
 
 type PrivateProps = {
     inputName: string,
@@ -11,7 +11,6 @@ type PrivateProps = {
 
 
 const FormInput = ({inputName, placeHolder, type, name}:PrivateProps) => {
-    const [field, meta] = useField(inputName);
     return (
         <div className={s.input}>
             <label className={s.title} htmlFor={inputName}>{inputName}</label>

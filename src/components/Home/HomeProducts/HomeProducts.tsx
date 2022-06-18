@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from './HomeProducts.module.css'
 import Title from "../../assets/Title/Title";
 import SubTitle from "../../assets/SubTitle/SubTitle";
-import {useAppDispatch, useAppSelector} from '../../../hooks/redux';
-import {getProductsForMainPage } from '../../../store/reducers/ActionCreators';
+import {useAppSelector} from '../../../hooks/redux';
 import ProductCard from "./ProductsCard/ProductCard";
 
 type PrivateProps = {

@@ -13,7 +13,6 @@ export const getProductsForMainPage = createAsyncThunk(
         }
     }
 )
-
 export const getPopularProductsForMainPage = createAsyncThunk(
     'popularProduct/getAll',
     async (data: any, thunkAPI) => {
