@@ -18,9 +18,8 @@ const ProductsContainer = () => {
     const {addProductToCard} = cartSlice.actions
     const addProducts = (id: number, productId:number, productTitle:string, productImage:string, price: number, count:number) => {
         dispatch(addProductToCard({id: id, productId: productId,  productTitle: productTitle,
-            productImage: productImage, price: price, count: count}))
+            productImage: productImage, price: price, count: count, totalPrice: price*count}))
     }
-
     return <Products currentProduct={currentProduct[0]}
                      addProducts={addProducts}
                      ProductData={ProductData}

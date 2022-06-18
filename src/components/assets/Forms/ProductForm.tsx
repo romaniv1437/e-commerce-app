@@ -6,9 +6,11 @@ import cartImage from "../../../assets/photos/decor/Vector.svg";
 import greenCartImage from "../../../assets/photos/decor/green_cart.svg";
 import s from './ProductForm.module.css'
 import FormInput from "./FormAssets/FormInput";
-import {NavLink} from "react-router-dom";
+import {useNavigate , NavLink} from "react-router-dom";
 import FormSelect from "./FormAssets/FormSelect/FormSelect";
 import CustomLink from "../CustomLink/CustomLink";
+import {ICartProduct} from "../../../models/ICart";
+import {IProduct} from "../../../models/IProduct";
 
 type PrivateProps = {
     buttonText: string,
@@ -16,11 +18,12 @@ type PrivateProps = {
     choiceOneTime: string,
     choiceSubscribe: { title: string, subTitle: string },
     addProducts: (id: number, productId:number, productTitle:string, productImage:string, price: number, count:number) => void,
-    cartProducts: Array<{ id: number; productId: number; count: number; productTitle: string; productImage: string; price: number; }>,
-    currentProduct: {id:number, title:string, imageURL:string, description:string, price:number},
+    cartProducts: Array<ICartProduct>,
+    currentProduct: IProduct,
 }
 
 const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe, addProducts, currentProduct, cartProducts}: PrivateProps) => {
+    let navigate = useNavigate();
     return (
         <Formik
             initialValues={{Quantity: 1, choiceOneTime: false, choiceSubscribe: false}}
@@ -37,6 +40,8 @@ const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe, add
                     currentProduct.price,
                     values.Quantity
                 )
+                navigate('/cart')
+
             }}
         >
             <Form className={s.form}>

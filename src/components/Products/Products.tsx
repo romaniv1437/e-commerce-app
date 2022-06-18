@@ -1,10 +1,12 @@
 import React from 'react';
 import s from './Products.module.css'
 import ProductForm from "../assets/Forms/ProductForm";
+import {ICartProduct} from "../../models/ICart";
+import {IProduct} from "../../models/IProduct";
 
 type PrivateProps = {
-    currentProduct: {id:number, title:string, imageURL:string, description:string, price:number},
-    cartProducts: Array<{ id: number; productId: number; count: number; productTitle: string; productImage: string; price: number; }>
+    currentProduct: IProduct,
+    cartProducts: Array<ICartProduct>
     ProductData: {details: string, shipping: string, buttonText:string, inputName: string, choiceOneTime: string, choiceSubscribe: {title: string, subTitle: string}},
     addProducts: (id: number, productId:number, productTitle:string, productImage:string, price: number, count:number) => void
 }

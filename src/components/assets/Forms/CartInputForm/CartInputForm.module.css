@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    align-items: center;
+    max-width: 82px;
+
+}
+
+.form input {
+    text-align: center;
+    border: 1px solid #56B280;
+    min-height: 20px;
+    width: 100%;
+}

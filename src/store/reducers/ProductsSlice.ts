@@ -33,6 +33,8 @@ export const productSlice = createSlice({
         }
     },
     extraReducers: {
+        // getProductsForMainPage, getPopularProductsForMainPage асинхронна функція що робить ajax запит за допомогою axios
+        // функція вертає проміс, за станом промісу ми виконуємо різні функції в редюсері
         [getProductsForMainPage.fulfilled.type]: (state, action: PayloadAction<IProduct[]>) => {
             state.isLoading = false;
             state.error = '';

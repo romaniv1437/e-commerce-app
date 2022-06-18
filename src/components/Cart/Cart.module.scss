@@ -1,0 +1,121 @@
+.cart {
+  .link {
+    font-size: 18px;
+    color: #56B280;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  min-height: 721px;
+  .cart__container {
+    padding-top: 80px;
+    display: flex;
+    .cart_flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      .titles {
+        text-align: center;
+        h2 {
+          font-size: 26px;
+        }
+      }
+      .table {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        .column_names {
+          display: flex;
+          justify-content: space-between;
+          gap: 0 30px;
+          p {
+            font-size: 16px;
+            font-weight: 500;
+            &:first-child {
+              max-width: 600px;
+              width: 100%;
+            }
+          }
+        }
+        .product_flex {
+          .product {
+            p {
+              font-weight: 500;
+            }
+            justify-content: space-between;
+            display: flex;
+            padding-top: 42px;
+            padding-bottom: 30px;
+            border-top: 1px solid #E5E5E5;
+            .left {
+              display: flex;
+              gap: 0 30px;
+              max-width: 600px;
+              width: 100%;
+              .left_titles {
+                a {
+                  font-size: 26px;
+                  color: #000;
+                  font-weight: 400;
+                  &:hover {
+                    color: #5b5b5b;
+                  }
+                }
+              }
+              img {
+                max-width: 160px;
+                min-height: 120px;
+              }
+            }
+            .right {
+              display: flex;
+              width: 100%;
+              max-width: 385px;
+              justify-content: space-between;
+              align-items: center;
+              p {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      .subTotal_container {
+        border-top: 1px solid #E5E5E5;
+        padding-top: 44px;
+        display: flex;
+        justify-content: flex-end;
+        .subTotal {
+          display: flex;
+          max-width:602px;
+          width: 100%;
+          justify-content: space-between;
+          button {
+            max-width: 183px;
+            max-height: 40px;
+          }
+          .totalPrice {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            > p {
+              font-size: 16px;
+              font-weight: 400;
+              color: #9E9E9E;
+            }
+            span {
+              p {
+                font-size: 20px;
+                font-weight: 500;
+              }
+              max-width: 183px;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+    }
+  }
+}

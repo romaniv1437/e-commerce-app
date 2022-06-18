@@ -4,7 +4,8 @@ export interface ICartProduct {
     count: number,
     productTitle: string,
     productImage: string,
-    price: number
+    price: number,
+    totalPrice: number
 }
 
 export interface ICart {
