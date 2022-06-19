@@ -3,6 +3,7 @@ import s from './Products.module.css'
 import ProductForm from "../assets/Forms/ProductForm";
 import {ICartProduct} from "../../models/ICart";
 import {IProduct} from "../../models/IProduct";
+import {Navigate} from "react-router-dom";
 
 type PrivateProps = {
     currentProduct: IProduct,
@@ -12,7 +13,9 @@ type PrivateProps = {
 }
 
 const Products = ({currentProduct, addProducts, ProductData, cartProducts}:PrivateProps) => {
-
+    if (!currentProduct) {
+        return <Navigate to='/'/>
+    }
     return (
         <div className={s.product}>
             <main className={s.product__container}>

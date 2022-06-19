@@ -33,7 +33,18 @@
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        .details {
+          p {
+            color: #656565;
+            font-size: 16px;
 
+            span {
+              a {
+                color: #56B280;
+              }
+            }
+          }
+        }
         input {
           margin-right: 10px;
         }

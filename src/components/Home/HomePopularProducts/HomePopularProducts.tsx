@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from './HomePopularProducts.module.css'
-import {useAppDispatch, useAppSelector} from "../../../hooks/redux";
-import {getPopularProductsForMainPage} from "../../../store/reducers/ActionCreators";
+import {useAppSelector} from "../../../hooks/redux";
 import Title from "../../assets/Title/Title";
 import SubTitle from "../../assets/SubTitle/SubTitle";
 import ProductCard from "../HomeProducts/ProductsCard/ProductCard";
@@ -15,11 +14,8 @@ type PrivateProps = {
 
 
 const HomePopularProducts = ({HomePopularProductsData}:PrivateProps) => {
-    const dispatch = useAppDispatch();
-    const {popularProducts, isLoading, error, currentPage} = useAppSelector(state => state.productReducer)
-    useEffect(() => {
-        dispatch(getPopularProductsForMainPage({limit: 4, currentPage}))
-    }, [dispatch, currentPage])
+    const {popularProducts, isLoading, error} = useAppSelector(state => state.productReducer)
+
     return (
         <div className={s.popularProducts}>
             <div className={s.titles}>

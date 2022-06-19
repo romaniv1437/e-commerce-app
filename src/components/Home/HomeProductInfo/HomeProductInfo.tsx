@@ -31,7 +31,7 @@ const HomeProductInfo = ({HomeProductInfoData}: PrivateProps) => {
                     {description}
                 </div>
                 <div className={s.bottom_button}>
-                    <NavLink to='/about'><CustomButton>{HomeProductInfoData.buttonText}</CustomButton></NavLink>
+                    <NavLink to='/'><CustomButton>{HomeProductInfoData.buttonText}</CustomButton></NavLink>
                 </div>
             </div>
             <div className={s.right}>

@@ -4,14 +4,15 @@ import {NavLink} from "react-router-dom";
 
 type PrivateProps = {
     profileImage: string,
-    cartImage: string
+    cartImage: string,
+    count: number
 }
 
-const HeaderUser = ({profileImage, cartImage}:PrivateProps) => {
+const HeaderUser = ({profileImage, cartImage, count}:PrivateProps) => {
     return (
         <div className={s.header_user}>
             <NavLink to='/profile'><img src={profileImage} alt="profile"/></NavLink>
-            <NavLink to='/cart'><img src={cartImage} alt="cart"/></NavLink>
+            <NavLink to='/cart' className={s.cart} data-count={count}><img src={cartImage} alt="cart"/></NavLink>
         </div>
     );
 };

@@ -16,7 +16,7 @@ const HomeCard = ({HomeCardData}:PrivateProps) => {
                 <Title>{HomeCardData.title}</Title>
                 <p>{HomeCardData.subTitle}</p>
             </div>
-            <NavLink to='/discovery'><CustomButton>{HomeCardData.buttonText}</CustomButton></NavLink>
+            <NavLink to='/'><CustomButton>{HomeCardData.buttonText}</CustomButton></NavLink>
         </div>
     );
 };

@@ -32,6 +32,13 @@
   flex-direction: row-reverse;
   align-items: center;
 }
+.form .inputs .choice > div .details p {
+  color: #656565;
+  font-size: 16px;
+}
+.form .inputs .choice > div .details p span a {
+  color: #56B280;
+}
 .form .inputs .choice > div input {
   margin-right: 10px;
 }

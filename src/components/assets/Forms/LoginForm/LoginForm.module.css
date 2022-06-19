@@ -1,0 +1,16 @@
+.login_form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px 0;
+}
+.login_form input {
+  padding-left: 5px;
+  max-width: 445px;
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #E5E5E5;
+}
+
+/*# sourceMappingURL=LoginForm.module.css.map */

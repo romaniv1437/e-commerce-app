@@ -7,8 +7,8 @@ const Navigation = (props:any) => {
     return (
         <div className={s.navigation}>
             <DropdownMenu closeMenu={props.closeMenu} discovery_items={props.discovery_items}/>
-            <NavLink onClick={props.closeMenu} to='/about'>About</NavLink>
-            <NavLink onClick={props.closeMenu} to='/contact'>Contact Us</NavLink>
+            <NavLink onClick={props.closeMenu} to='/'>About</NavLink>
+            <NavLink onClick={props.closeMenu} to='/'>Contact Us</NavLink>
         </div>
     );
 };

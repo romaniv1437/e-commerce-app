@@ -1,0 +1,12 @@
+.login {
+  padding-top: 145px;
+  min-height: 650px;
+}
+.login .login__container {
+  display: flex;
+  max-width: 450px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=Login.module.css.map */

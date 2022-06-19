@@ -4,6 +4,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  .cart::before {
+    content: attr(data-count);
+    position: absolute;
+    transform:translate(50%,-50%);
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    background: #56B280;
+  }
   img {
     width: 25.5px;
     height: 25.5px;

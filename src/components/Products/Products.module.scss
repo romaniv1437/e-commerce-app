@@ -7,6 +7,10 @@
       justify-content: center;
       .left {
         margin-top: 40px;
+        img {
+          max-width: 346px !important;
+          min-height: 277px !important;
+        }
         .left_titles {
           position: absolute;
           left: 0;
@@ -24,7 +28,7 @@
           }
           .price {
             position: absolute;
-            top: 450px;
+            top: 350px;
           }
         }
         .right_description {
@@ -37,7 +41,7 @@
   padding-top: 60px;
   min-height: 621px;
   .product__container {
-    @media (min-width: 770px) {
+    @media (min-width: 769px) {
       justify-content: space-between;
     }
     display: flex;

@@ -22,17 +22,11 @@ export const cartSlice = createSlice({
         addProductToCard(state, action: PayloadAction<ICartProduct>) {
             // перевіряємо чи масив cartProducts не пустий, якщо так, то зануляємо тотал прайс(для безпеки)
             // та пушимо продукт в масив
-            // якщо масив не пустий то робимо перевірку чи існує такий продукт в масиві, щоб не дати можливість добавити ще один такий
             if (state.cart[0].cartProducts.length === 0) {
                 state.cart[0].totalPrice = 0;
                 state.cart[0].cartProducts.push(action.payload);
             } else {
-                state.cart[0].cartProducts.map(product => {
-                    if (product.productId !== action.payload.productId) {
-                        state.cart[0].cartProducts.push(action.payload);
-                    }
-                    return product
-                })
+                state.cart[0].cartProducts.push(action.payload);
             }
             state.cart[0].totalPrice += action.payload.price * action.payload.count;
         },

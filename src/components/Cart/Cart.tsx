@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Cart.module.css'
 import {ICartProduct} from "../../models/ICart";
 import {cartDataInterface} from "../../data/CartData";
 import {NavLink} from "react-router-dom";
 import CartInputForm from "../assets/Forms/CartInputForm/CartInputForm";
-import CustomButton from "../assets/Button/CustomButton";
+import CustomLink from '../assets/CustomLink/CustomLink';
 
 type PrivateProps = {
     cartProducts: Array<ICartProduct>,
@@ -65,7 +65,7 @@ const Cart = ({cartProducts, cartData, changeQTY, removeProduct, totalPrice}: Pr
                                     </span>
                                         <p>{cartData.subTotalTitle}</p>
                                     </div>
-                                    <CustomButton>{cartData.buttonText}</CustomButton>
+                                    <CustomLink to='/profile'>{cartData.buttonText}</CustomLink>
                                 </div>
                             </div>
                         </div>}

@@ -1,0 +1,14 @@
+.login_form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px 0;
+  input {
+    padding-left: 5px;
+    max-width: 445px;
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #E5E5E5;
+  }
+}

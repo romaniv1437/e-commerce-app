@@ -14,6 +14,10 @@
   .product .product__container .left {
     margin-top: 40px;
   }
+  .product .product__container .left img {
+    max-width: 346px !important;
+    min-height: 277px !important;
+  }
   .product .product__container .left .left_titles {
     position: absolute;
     left: 0;
@@ -30,7 +34,7 @@
   }
   .product .product__container .right .right_title .price {
     position: absolute;
-    top: 450px;
+    top: 350px;
   }
   .product .product__container .right .right_description {
     margin-top: 20px;
@@ -39,7 +43,7 @@
 .product .product__container {
   display: flex;
 }
-@media (min-width: 770px) {
+@media (min-width: 769px) {
   .product .product__container {
     justify-content: space-between;
   }

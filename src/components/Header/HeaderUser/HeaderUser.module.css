@@ -5,6 +5,17 @@
   display: flex;
   justify-content: space-between;
 }
+.header_user .cart::before {
+  content: attr(data-count);
+  position: absolute;
+  transform: translate(50%, -50%);
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background: #56B280;
+}
 .header_user img {
   width: 25.5px;
   height: 25.5px;

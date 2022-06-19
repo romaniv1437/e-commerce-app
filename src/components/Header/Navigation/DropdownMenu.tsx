@@ -8,7 +8,7 @@ const DropdownMenu = (props:any) => {
 
     const discovery_items = props.discovery_items.map((item:any) => { return {
         label: (
-            <NavLink onClick={props.closeMenu} to={`/discovery/${item.name.toLowerCase()}`}>
+            <NavLink onClick={props.closeMenu} to={`/`}>
                 <p>{item.name}</p>
             </NavLink>
         ),
@@ -18,7 +18,7 @@ const DropdownMenu = (props:any) => {
         <Menu items={discovery_items}/>
     );
     return <Dropdown overlay={menu}>
-        <NavLink to='/discovery'>
+        <NavLink to='/'>
             <Space>
                 Discovery
                 <DownOutlined />
