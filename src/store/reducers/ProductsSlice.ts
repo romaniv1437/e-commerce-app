@@ -25,9 +25,11 @@ export const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
+        // функція яка додає до currentPage 1, тим самим змінює активну сторінку на наступну
         setCurrentPageNext(state, action: PayloadAction<number>) {
             state.currentPage += action.payload
         },
+        // функція що повертає на попередню сторінку
         setCurrentPagePrev(state, action: PayloadAction<number>) {
             state.currentPage -= action.payload
         }

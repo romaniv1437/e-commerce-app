@@ -12,10 +12,12 @@ import CartContainer from "./components/Cart/CartContainer";
 
 
 function App() {
-
+    // отримуємо useAppDispatch під іменем dispatch
     const dispatch = useAppDispatch();
+    // отримуємо ліміт і вибрану сторінку через useAppSelector з productReducer
     const {limit, currentPage} = useAppSelector(state => state.productReducer)
-
+    // в useEffect діспатчимо асинхронну функцію, а другим параметром передаємо зав"язаності з limit, currentPage
+    // useEffect спрацює при першому заходженню на сторіку, і далі, якщо якісь з зав"язяаностей будуть мінятися
     useEffect(() => {
         dispatch(getProductsForMainPage({limit, currentPage}))
     }, [dispatch, limit, currentPage])
