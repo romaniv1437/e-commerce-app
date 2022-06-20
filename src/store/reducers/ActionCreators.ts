@@ -1,6 +1,11 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {productAPI} from "../../axios/api/api";
 
+
+import prod from '../../axios/mock-data/products.json'
+console.log(prod);
+
+
 // санка яка отримує продукти для головної сторінки
 export const getProductsForMainPage = createAsyncThunk(
     'product/getAll',
@@ -8,7 +13,8 @@ export const getProductsForMainPage = createAsyncThunk(
         try {
             // productAPI ксатомний axios
             const response = await productAPI.getPopularProductsForMainPage()
-            console.log(response)
+            console.log(response);
+
             return response.data
         } catch (e) {
             return thunkAPI.rejectWithValue('Products не загрузились')
