@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Products.module.css'
-import ProductForm from "../assets/Forms/ProductForm";
+import ProductForm from "../assets/Forms/ProductForm/ProductForm";
 import {ICartProduct} from "../../models/ICart";
 import {IProduct} from "../../models/IProduct";
 import {Navigate} from "react-router-dom";

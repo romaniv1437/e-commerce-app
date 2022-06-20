@@ -55,7 +55,7 @@
 .productInfo .left .description .description_item p {
   margin-bottom: 0;
 }
-.productInfo .left .bottom_button button {
+.productInfo .left a {
   max-height: 40px;
   max-width: 194px;
   margin-top: 20px;

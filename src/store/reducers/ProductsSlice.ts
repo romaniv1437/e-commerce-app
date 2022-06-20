@@ -1,6 +1,6 @@
 import {IPopularProduct, IProduct} from "../../models/IProduct";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getPopularProductsForMainPage, getProductsForMainPage} from "./ActionCreators";
+import {getProductsForMainPage} from "./ActionCreators";
 
 
 interface ProductState {
@@ -18,7 +18,7 @@ const initialState: ProductState = {
     isLoading: false,
     error: '',
     currentPage: 1,
-    limit: 8
+    limit: 12
 }
 
 export const productSlice = createSlice({
@@ -29,13 +29,9 @@ export const productSlice = createSlice({
         setCurrentPageNext(state, action: PayloadAction<number>) {
             state.currentPage += action.payload
         },
-        // функція що повертає на попередню сторінку
-        setCurrentPagePrev(state, action: PayloadAction<number>) {
-            state.currentPage -= action.payload
-        }
     },
     extraReducers: {
-        // getProductsForMainPage, getPopularProductsForMainPage асинхронна функція що робить ajax запит за допомогою axios
+        // getProductsForMainPage асинхронна функція що робить ajax запит за допомогою axios
         // функція вертає проміс, за станом промісу ми виконуємо різні функції в редюсері
         [getProductsForMainPage.fulfilled.type]: (state, action: PayloadAction<IProduct[]>) => {
             state.isLoading = false;
@@ -46,18 +42,6 @@ export const productSlice = createSlice({
             state.isLoading = true
         },
         [getProductsForMainPage.rejected.type]: (state, action: PayloadAction<string>) => {
-            state.isLoading = false;
-            state.error = action.payload
-        },
-        [getPopularProductsForMainPage.fulfilled.type]: (state, action: PayloadAction<IPopularProduct[]>) => {
-            state.isLoading = false;
-            state.error = '';
-            state.popularProducts = action.payload
-        },
-        [getPopularProductsForMainPage.pending.type]: (state) => {
-            state.isLoading = true
-        },
-        [getPopularProductsForMainPage.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload
         }

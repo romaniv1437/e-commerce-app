@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './HomePopularProducts.module.css'
 import {useAppSelector} from "../../../hooks/redux";
-import Title from "../../assets/Title/Title";
-import SubTitle from "../../assets/SubTitle/SubTitle";
+import Title from "../../assets/UI-Components/Title/Title";
+import SubTitle from "../../assets/UI-Components/SubTitle/SubTitle";
 import ProductCard from "../HomeProducts/ProductsCard/ProductCard";
 
 type PrivateProps = {
@@ -14,8 +14,8 @@ type PrivateProps = {
 
 
 const HomePopularProducts = ({HomePopularProductsData}:PrivateProps) => {
-    const {popularProducts, isLoading, error} = useAppSelector(state => state.productReducer)
-
+    const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+    const productsForPopularPage = products.slice(8, 12)
     return (
         <div className={s.popularProducts}>
             <div className={s.titles}>
@@ -24,7 +24,7 @@ const HomePopularProducts = ({HomePopularProductsData}:PrivateProps) => {
                 {isLoading && <Title>Loading</Title>}
                 {error && <Title>{error}</Title>}
             </div>
-            <ProductCard products={popularProducts} />
+            <ProductCard products={productsForPopularPage} />
         </div>
     );
 };

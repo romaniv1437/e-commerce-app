@@ -2,7 +2,6 @@ import React from 'react';
 import {Field, Form, Formik} from 'formik';
 import s from './LoginForm.module.css'
 import * as Yup from 'yup';
-import CustomButton from "../../Button/CustomButton";
 
 const LoginForm = () => {
     return (
@@ -27,7 +26,7 @@ const LoginForm = () => {
 
                 <Field name="password" type="password" placeholder='password'/>
 
-                <CustomButton>Login</CustomButton>
+                <button>Login</button>
             </Form>
         </Formik>
     );

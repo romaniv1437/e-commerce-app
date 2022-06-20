@@ -4,17 +4,15 @@ import Logo from "./Logo/Logo";
 import Navigation from "./Navigation/Navigation";
 import HeaderUser from "./HeaderUser/HeaderUser";
 
-import {cartImage, logoImage} from "../../data/HeaderData";
-import {profileImage} from "../../data/HeaderData";
-import {discovery_items} from "../../data/HeaderData";
+import {cartImage, discovery_items, logoImage, profileImage} from "../../data/HeaderData";
 import MenuBurger from "./MenuBurger/MenuBurger";
-import useWindowDimensions from "../../assets/hooks/useWindowDimensions";
-import {useAppSelector} from "../../hooks/redux";
 
-const Header = () => {
-    const { width } = useWindowDimensions();
-    const {cart} = useAppSelector(state => state.cartReducer)
-    const count = cart[0].cartProducts.length
+type PrivateProps = {
+    width: number,
+    count: number
+}
+
+const Header = ({width, count}:PrivateProps) => {
     return (
         <header className={s.header}>
             <div className={s.header__container}>

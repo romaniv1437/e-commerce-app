@@ -1,16 +1,16 @@
 import React from 'react';
 import {Form, Formik} from 'formik';
 import * as Yup from 'yup';
-import CustomButton from "../Button/CustomButton";
-import cartImage from "../../../assets/photos/decor/Vector.svg";
-import greenCartImage from "../../../assets/photos/decor/green_cart.svg";
+import cartImage from "../../../../assets/photos/decor/Vector.svg";
+import greenCartImage from "../../../../assets/photos/decor/green_cart.svg";
 import s from './ProductForm.module.css'
-import FormInput from "./FormAssets/FormInput";
+import FormInput from "../FormAssets/FormInput";
 import {useNavigate , NavLink} from "react-router-dom";
-import FormSelect from "./FormAssets/FormSelect/FormSelect";
-import CustomLink from "../CustomLink/CustomLink";
-import {ICartProduct} from "../../../models/ICart";
-import {IProduct} from "../../../models/IProduct";
+import FormSelect from "../FormAssets/FormSelect/FormSelect";
+import CustomLink from "../../UI-Components/CustomLink/CustomLink";
+import {ICartProduct} from "../../../../models/ICart";
+import {IProduct} from "../../../../models/IProduct";
+import GreenCustomButton from "../../UI-Components/GreenCustomButton/GreenCustomButton";
 
 type PrivateProps = {
     buttonText: string,
@@ -70,9 +70,9 @@ const ProductForm = ({buttonText, inputName, choiceOneTime, choiceSubscribe, add
                     <CustomLink to='/cart'>
                         <img src={greenCartImage} alt="cart"/> + Already in cart
                     </CustomLink> :
-                    <CustomButton type="submit">
+                    <GreenCustomButton type='submit'>
                         <img src={cartImage} alt="cart"/> {buttonText}
-                    </CustomButton>}
+                    </GreenCustomButton>}
             </Form>
         </Formik>
     );

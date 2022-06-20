@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './HomeProductInfo.module.css'
 import {descriptionItem} from "../../../data/HomeData";
-import CustomButton from "../../assets/Button/CustomButton";
-import {NavLink} from "react-router-dom";
+import GreenCustomLink from "../../assets/UI-Components/GreenCustomLink/GreenCustomLink";
 
 type PrivateProps = {
     HomeProductInfoData: {
@@ -30,9 +29,7 @@ const HomeProductInfo = ({HomeProductInfoData}: PrivateProps) => {
                 <div className={s.description}>
                     {description}
                 </div>
-                <div className={s.bottom_button}>
-                    <NavLink to='/'><CustomButton>{HomeProductInfoData.buttonText}</CustomButton></NavLink>
-                </div>
+                <GreenCustomLink to='/'>{HomeProductInfoData.buttonText}</GreenCustomLink>
             </div>
             <div className={s.right}>
                 <img src={HomeProductInfoData.image} alt="info_image"/>

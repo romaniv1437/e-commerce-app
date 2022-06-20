@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'localhost:3000/src/axios/mock-data/'
+    baseURL: 'https://mockend.com/romaniv1437/e-commerce-app/'
 })
 
 export default instance

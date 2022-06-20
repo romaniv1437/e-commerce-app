@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './HomeTestimonials.module.css'
 import {testimonialItem} from "../../../data/HomeData";
-import Title from "../../assets/Title/Title";
-import SubTitle from "../../assets/SubTitle/SubTitle";
+import Title from "../../assets/UI-Components/Title/Title";
+import SubTitle from "../../assets/UI-Components/SubTitle/SubTitle";
 
 type PrivateProps = {
     HomeTestimonialsData: {

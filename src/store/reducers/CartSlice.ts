@@ -8,8 +8,8 @@ interface CartState {
 }
 
 const initialState: CartState = {
-    cart: [{id: 1, userId: 1, cartProducts: [], totalPrice: 0}],
-    isLoading: false,
+    cart: [],
+    isLoading: true,
     error: '',
 }
 
@@ -17,17 +17,18 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
+        setCart(state, action: PayloadAction<ICart>) {
+            state.isLoading = true
+            state.cart[0] = action.payload
+            state.isLoading = false
+            console.log(state.cart[0])
+        },
         // в корзині знаходиться ICartProduct а не IProduct, це зроблено для того, щоб добавити count i total price
         // які не властиві моделі IProduct
         addProductToCard(state, action: PayloadAction<ICartProduct>) {
             // перевіряємо чи масив cartProducts не пустий, якщо так, то зануляємо тотал прайс(для безпеки)
             // та пушимо продукт в масив
-            if (state.cart[0].cartProducts.length === 0) {
-                state.cart[0].totalPrice = 0;
-                state.cart[0].cartProducts.push(action.payload);
-            } else {
-                state.cart[0].cartProducts.push(action.payload);
-            }
+            state.cart[0].cartProducts.push(action.payload);
             state.cart[0].totalPrice += action.payload.price * action.payload.count;
         },
         onChangeQTY(state, action: PayloadAction<{count: number, id: number }>) {
@@ -39,7 +40,6 @@ export const cartSlice = createSlice({
                     product.totalPrice = product.price*product.count
                     cartSlice.caseReducers.calculateCart(state);
                 }
-                console.log(state.cart[0].totalPrice)
                 return product
             })
         },
@@ -52,12 +52,14 @@ export const cartSlice = createSlice({
             // функція що приймає лише стейт, і використовується для перерахування загальної суми в корзині
             // за допомогою цієї функції, в корзині завжди актуальна загальна ціна
             let totalPrice = 0
-            state.cart[0].cartProducts.map(product => {
-                product.totalPrice = product.price*product.count
-                totalPrice += product.totalPrice
-                state.cart[0].totalPrice = totalPrice
-                return product
-            })
+            if (state.cart[0].cartProducts.length !== 0) {
+                state.cart[0].cartProducts.map(product => {
+                    product.totalPrice = product.price*product.count
+                    totalPrice += product.totalPrice
+                    return product
+                })
+            }
+            state.cart[0].totalPrice = totalPrice
         }
     },
 })

@@ -1,15 +1,16 @@
-.default_button {
+.green_link {
     width: 100%;
     height: 100%;
     background-color: #56B280;
     border-radius: 3px;
     color: #fff;
     transition: .3s linear;
-    cursor: pointer;
     font-size: 21px;
+    text-align: center;
 }
 
-.default_button:hover {
+.green_link:hover {
     transition: .3s linear;
     background-color: #65be8d;
+    color: #fff;
 }

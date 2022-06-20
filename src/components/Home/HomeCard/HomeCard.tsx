@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './HomeCard.module.css'
-import CustomButton from "../../assets/Button/CustomButton";
-import Title from "../../assets/Title/Title";
-import {NavLink} from "react-router-dom";
+import GreenCustomLink from "../../assets/UI-Components/GreenCustomLink/GreenCustomLink";
+import Title from "../../assets/UI-Components/Title/Title";
 
 type PrivateProps = {
     HomeCardData: {icon: string, title: string, subTitle: string, buttonText: string }
@@ -16,7 +15,7 @@ const HomeCard = ({HomeCardData}:PrivateProps) => {
                 <Title>{HomeCardData.title}</Title>
                 <p>{HomeCardData.subTitle}</p>
             </div>
-            <NavLink to='/'><CustomButton>{HomeCardData.buttonText}</CustomButton></NavLink>
+            <GreenCustomLink to='/products'>{HomeCardData.buttonText}</GreenCustomLink>
         </div>
     );
 };

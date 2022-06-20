@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import {setupStore} from "./store/store";
-import ScrollToTop from "./components/assets/ScrollToTop/ScrollToTop";
+import ScrollToTop from "./components/assets/Custom-Hooks/ScrollToTop/ScrollToTop";
 
 const store = setupStore()
 

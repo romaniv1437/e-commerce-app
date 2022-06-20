@@ -4,7 +4,7 @@ import {ICartProduct} from "../../models/ICart";
 import {cartDataInterface} from "../../data/CartData";
 import {NavLink} from "react-router-dom";
 import CartInputForm from "../assets/Forms/CartInputForm/CartInputForm";
-import CustomLink from '../assets/CustomLink/CustomLink';
+import CustomLink from '../assets/UI-Components/CustomLink/CustomLink';
 
 type PrivateProps = {
     cartProducts: Array<ICartProduct>,

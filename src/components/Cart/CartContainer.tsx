@@ -3,6 +3,7 @@ import Cart from './Cart';
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {cartData} from "../../data/CartData";
 import {cartSlice} from "../../store/reducers/CartSlice";
+import withCartLoading from "../assets/HOC/withCartLoading";
 
 const CartContainer = () => {
     // получаємо корзину через useAppSelector
@@ -10,9 +11,7 @@ const CartContainer = () => {
     // получаємо функції onChangeQTY, onRemoveProduct з cartSlice.actions
     const {onChangeQTY,onRemoveProduct } = cartSlice.actions
     // присвоюємо змінній cartProducts продукти з корзини
-    const cartProducts = cart[0].cartProducts
     // присвоюємо змінній totalPrice загальну ціну з корзини
-    const totalPrice = cart[0].totalPrice
     // використовуємо кастомний useAppDispatch для того щоб диспатчити функції з cartSlice.actions
     const dispatch = useAppDispatch();
     const changeQTY = (id: number, count:number) => {
@@ -22,7 +21,9 @@ const CartContainer = () => {
         dispatch(onRemoveProduct(id))
     }
 
+    const cartProducts = cart[0].cartProducts
+    const totalPrice = cart[0].totalPrice
     return <Cart cartProducts={cartProducts} cartData={cartData} changeQTY={changeQTY} removeProduct={removeProduct} totalPrice={totalPrice}/>
 };
 
-export default CartContainer;
+export default withCartLoading(CartContainer);

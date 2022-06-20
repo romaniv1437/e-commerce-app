@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './HomeProducts.module.css'
-import Title from "../../assets/Title/Title";
-import SubTitle from "../../assets/SubTitle/SubTitle";
+import Title from "../../assets/UI-Components/Title/Title";
+import SubTitle from "../../assets/UI-Components/SubTitle/SubTitle";
 import {useAppSelector} from '../../../hooks/redux';
 import ProductCard from "./ProductsCard/ProductCard";
 
@@ -13,6 +13,7 @@ const HomeProducts = ({HomeProductsData}:PrivateProps) => {
 
 
     const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+    const productsForHomePage = products.slice(0, 8)
     return (
         <div className={s.home_products}>
             <div className={s.titles}>
@@ -21,7 +22,7 @@ const HomeProducts = ({HomeProductsData}:PrivateProps) => {
                 {isLoading && <Title>Loading</Title>}
                 {error && <Title>{error}</Title>}
             </div>
-            <ProductCard products={products}/>
+            <ProductCard products={productsForHomePage}/>
         </div>
     );
 };
