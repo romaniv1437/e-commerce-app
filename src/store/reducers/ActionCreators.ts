@@ -4,10 +4,11 @@ import {productAPI} from "../../axios/api/api";
 // санка яка отримує продукти для головної сторінки
 export const getProductsForMainPage = createAsyncThunk(
     'product/getAll',
-    async (data: any, thunkAPI) => {
+    async (_, thunkAPI) => {
         try {
             // productAPI ксатомний axios
-            const response = await productAPI.getProductsForMainPage(data.limit, data.page)
+            const response = await productAPI.getPopularProductsForMainPage()
+            console.log(response)
             return response.data
         } catch (e) {
             return thunkAPI.rejectWithValue('Products не загрузились')
@@ -19,8 +20,7 @@ export const getPopularProductsForMainPage = createAsyncThunk(
     'popularProduct/getAll',
     async (data: any, thunkAPI) => {
         try {
-            // productAPI ксатомний axios
-            const response = await productAPI.getPopularProductsForMainPage(data.limit, data.page)
+            const response = await productAPI.getPopularProductsForMainPage()
             return response.data
         } catch (e) {
             return thunkAPI.rejectWithValue('Products не загрузились')

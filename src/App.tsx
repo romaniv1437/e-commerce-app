@@ -21,7 +21,7 @@ function App() {
     // в useEffect діспатчимо асинхронну функцію, а другим параметром передаємо зав"язаності з limit, currentPage
     // useEffect спрацює при першому заходженню на сторіку, і далі, якщо якісь з зав"язяаностей будуть мінятися
     useEffect(() => {
-        dispatch(getProductsForMainPage({limit, currentPage}));
+        dispatch(getProductsForMainPage());
         dispatch(getPopularProductsForMainPage({limit: 4, currentPage}))
     }, [dispatch, limit, currentPage])
 
