@@ -9,7 +9,8 @@ interface ProductState {
     isLoading: boolean,
     error: string,
     currentPage: number,
-    limit: number
+    limit: number,
+    totalPages: number
 }
 
 const initialState: ProductState = {
@@ -18,7 +19,8 @@ const initialState: ProductState = {
     isLoading: false,
     error: '',
     currentPage: 1,
-    limit: 12
+    limit: 12,
+    totalPages: 100
 }
 
 export const productSlice = createSlice({
@@ -36,7 +38,7 @@ export const productSlice = createSlice({
         [getProductsForMainPage.fulfilled.type]: (state, action: PayloadAction<IProduct[]>) => {
             state.isLoading = false;
             state.error = '';
-            state.products = action.payload
+            state.products = [...state.products, ...action.payload]
         },
         [getProductsForMainPage.pending.type]: (state) => {
             state.isLoading = true

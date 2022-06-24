@@ -12,6 +12,7 @@ import Profile from "./components/Profile/Profile";
 
 import {cartSlice} from "./store/reducers/CartSlice";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import ProductsPageContainer from "./components/Products/ProductsPage/ProductsPageContainer";
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/products/:productName' element={<ProductsContainer />}/>
-                    <Route path='/products' element={<div>products</div>}/>
+                    <Route path='/products' element={<ProductsPageContainer />}/>
                     <Route path='/cart' element={<CartContainer />}/>
                     <Route path='/profile' element={<Profile />}/>
                     <Route path='/login' element={<Login />}/>

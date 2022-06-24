@@ -1,0 +1,23 @@
+.products__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+.products__container .search {
+  border: 1px solid #E5E5E5;
+  border-radius: 20px;
+  max-width: 300px;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products__container .search input {
+  font-size: 18px;
+  width: 80%;
+  min-height: 50px;
+}
+
+/*# sourceMappingURL=ProductsPage.module.css.map */
