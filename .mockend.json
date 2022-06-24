@@ -1,9 +1,6 @@
 {
   "Product": {
-      "id": {"int": {
-        "min": 1,
-        "max": 900
-      } },
+      "id": { "regexp": "{1,900}" },
       "title": { "regexp": "[A-Z][a-z]{5,10}" },
       "imageURL": {
         "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
